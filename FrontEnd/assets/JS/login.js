@@ -53,7 +53,7 @@ document.getElementById("errorMessage").style.display = "none";
                 localStorage.setItem("userId", data.userId);
               //  localStorage.setItem("user",JSON.stringify(data));
                 // Redirection vers page accueil //
-                location.href="index-bluel.html"
+                location.href="index.html"
             });
         }      
         catch   
