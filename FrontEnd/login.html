@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<title>Sophie Bluel - Architecte d'intérieur</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap" rel="stylesheet">
+	<meta name="description" content="">
+	<link rel="stylesheet" href="./assets/style.css">
+</head>
+
+<body>
+    <header class="headerLogin">
+        <h1>Sophie Bluel<br>
+            <span style="text-transform: uppercase;">Architecte d'intérieur</span></h1>
+        <nav>
+            <ul>
+                <li><a href="index-bluel.html#portfolio">projets</a></li>
+                <li><a href="index-bluel.html#contact">contact</a></li>
+                <li class="styleLogin"><a href="login.html">login</a></li>
+                <li><img src="./assets/icons/instagram.png" alt="Instagram" id="insta"></li>
+            </ul>
+        </nav>
+    </header>
+
+<!-- MAIN -->
+
+<main class="mainLogin">
+        <div class="connection">
+            <h2>Log In</h2>
+            <form id="formLogin" method="post" action="http://localhost:5678/api/users/login">
+                <div class="connectionEmail">
+                    <label for="email">E-mail</label><br>
+                    <input id="email" type="email" name="email" required/>
+                </div>
+                <div class="connectionPassword">
+                    <label for="pass">Mot de passe</label><br>
+                    <input id="password" type="password" name="password" required/>
+                    <h3 id="errorMessage"></h3>
+                </div>
+                <button class="connectionButton" type="submit">Se connecter</button>
+            </form>
+            <a href="#" class="reInitiate">Mot de passe oublié</a>
+        </div>  
+</main>
+
+<!-- FOOTER -->
+
+<footer>
+	<nav class="mentionsLogin">
+		<ul>
+			<li>Mentions Légales</li>
+		</ul>
+	</nav>
+</footer>
+<script src="./assets/JS/login.js"></script>
+</body>
+</html>

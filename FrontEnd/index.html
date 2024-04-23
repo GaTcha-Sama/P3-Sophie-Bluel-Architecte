@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<title>Sophie Bluel - Architecte d'intérieur</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<meta name="description" content="">
+	<link rel="stylesheet" href="./assets/style.css">
+	
+</head>
+
+<!----- HEADER ----->
+
+<body>
+	<div id="editionMode">
+		<i class="fa-regular fa-pen-to-square"></i>Mode édition
+	</div>
+	<header>
+		<h1 id="logoNav">Sophie Bluel<br>
+			<span style="text-transform: uppercase;">Architecte d'intérieur</span></h1>
+		<nav id="loginNav">
+			<ul>
+				<li><a href="#portfolio">projets</a></li>
+				<li><a href="#contact">contact</a></li>
+				<li><a id="textLogin" href="login-bluel.html">login</a>
+					<a id="textLogout" href="login-bluel.html">logout</a></li>					
+				<li><img src="./assets/icons/instagram.png" alt="Instagram" id="insta"></li>
+			</ul>
+		</nav>
+	</header>
+
+<!----- MAIN ------->
+
+<main>
+	<section id="introduction">
+		<figure>
+			<img src="./assets/images/sophie-bluel.png" alt="">
+		</figure>
+		<article>
+			<h2>Designer d'espace</h2>
+			<p>Je raconte votre histoire, je valorise vos idées. Je vous accompagne de la conception à la livraison finale du chantier.</p>
+			<p>Chaque projet sera étudié en commun, de façon à mettre en valeur les volumes, les matières et les couleurs dans le respect de l’esprit des lieux et le choix adapté des matériaux. Le suivi du chantier sera assuré dans le souci du détail, le respect du planning et du budget.</p>
+			<p>En cas de besoin, une équipe pluridisciplinaire peut-être constituée : architecte DPLG, décorateur(trice)</p>
+		</article>
+	</section>
+
+<!--- Projets ---->
+
+	<section id="portfolio">
+		<div id="titleModifBtn">
+			<h2>Mes Projets</h2>
+				<div id="modifBtn">
+					<a id= "updateWorks" href="#modal"><i class="fa-regular fa-pen-to-square"></i>modifier</a>
+				</div>
+		</div>
+			<div id="allFilters" class="filters"></div>
+			<div class="gallery"></div>
+	</section>
+
+<!------ Contact ------>
+
+	<section id="contact">
+		<h2>Contact</h2>
+		<p>Vous avez un projet ? Discutons-en !</p>
+		<form action="#" method="post">
+			<label for="name">Nom</label>
+			<input type="text" name="name" id="name">
+			<label for="email">Email</label>
+			<input type="email" name="email" id="email">
+			<label for="message">Message</label>
+			<textarea name="message" id="message" cols="30" rows="10"></textarea>
+			<input type="submit" value="Envoyer">
+		</form>
+	</section>
+</main>
+
+<!------ FOOTER ------>
+
+<footer>
+	<nav>
+		<ul>
+			<li>Mentions Légales</li>
+		</ul>
+	</nav>
+</footer>
+
+<!----- CREATION DE LA MODALE --------------->
+
+	<div id="modal" class="modalOverlay" aria-hidden="true" role="dialog" aria-labelledby="titleModalOverlay" style="display:none,">
+		<div id="modalWorks" class="modalGallery">
+			<a id="btnCloseFirstWindow" class="modalClose" href="#"><i class="fa-solid fa-xmark"></i></a>
+			<h3 id="titleModalOverlay" class="modalTitle">Galerie photo</h3>
+			<div class="modalContent"></div>
+			<hr>
+			<div class="modalContainerAdd">
+				<button id="addPixModal">Ajouter une photo</button>
+			</div>
+		</div>
+
+		<div id="modalEdit" class="modalEditWorks">
+			<div class="iconsSecondWindowContainer">
+				<a id="arrowReturn" href="#"><i class="fa-solid fa-arrow-left"></i></a>
+				<a id="btnCloseSecondWindow" href="#"><i class="fa-solid fa-xmark"></i></a>
+			</div>
+			<h3 class="modalTitle">Ajout photo</h3>
+			<form action="#" method="post" id="modalEditWorkForm">
+				<div id="editNewPhoto" class="contentNewPhoto">
+					<i id="addIconPhoto" class="fa-regular fa-image"></i>
+					<label id="newImage">+ Ajouter photo</label><br>
+					<input id="formImage" type="file" name="image" accept="image/*, .jpg, .jpeg, .png" required>
+					<p id="maxSize">jpg, png : 4Mo max</p>
+				</div>
+				<div class="modalNewCategoryTitle">
+					<label for="formTitle">Titre</label>
+					<input type="text" name="title" id="formTitle" value="" required>
+					<label for="formCategory">Catégorie</label>
+					<select class="chooseCategory" id="formCategory" required>
+						<option value=""></option>
+					</select>
+					<hr>
+					<input type="submit" id="submitNewWork" value="Valider">
+				</div>
+			</form>
+		</div>
+	</div>
+<script src="./assets/JS/index.js"></script>
+<script src="./assets/JS/admin.js"></script>
+</body>
+</html>
