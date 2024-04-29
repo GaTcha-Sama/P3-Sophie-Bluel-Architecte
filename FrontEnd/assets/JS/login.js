@@ -7,7 +7,6 @@ document.getElementById("errorMessage").style.display = "none";
 
     btnConnect.addEventListener("click", function(e){
         e.preventDefault();
-        console.log(e, "Bouton cliqué");
         const boxLogin = {
                             email : boxEmail.value,
                             password : boxPassword.value,
@@ -51,7 +50,7 @@ document.getElementById("errorMessage").style.display = "none";
             .then(data =>   {
                 localStorage.setItem("token", data.token);
                 localStorage.setItem("userId", data.userId);
-              //  localStorage.setItem("user",JSON.stringify(data));
+
                 // Redirection vers page accueil //
                 location.href="index.html"
             });

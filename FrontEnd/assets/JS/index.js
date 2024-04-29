@@ -37,7 +37,7 @@ const setupEventListeners = () => {
       if (category === "all") {
         displayAllWorks();
       } else {
-        displayFilteredWorks(parseInt(category, 10)); // on met un parseInt ici afin de s'assurer que la catégorie ne puisse être qu'un nombre. La seule catégorie lettrée doit être "Tous"
+        displayFilteredWorks(parseInt(category, 10)); // on met un parseInt (fonction utilisée pour convertir une string en un entier numérique) ici afin de s'assurer que la catégorie ne puisse être qu'un nombre. La seule catégorie lettrée doit être "Tous"
       }
     });
   });
@@ -140,7 +140,6 @@ const displayWorkModal = (work) => {
   trashIcon.addEventListener('click', function(e) {
     e.preventDefault();
     e.stopPropagation();
-    console.log(e, "bouton cliqué")
     if(confirm("Voulez-vous vraiment supprimer ce projet ?")) {
       const headers = {'Authorization':"Bearer "+ localStorage.getItem('token')}; // Bien mettre l'espace après Bearer //
       console.log(headers);
@@ -216,7 +215,7 @@ document.getElementById("modalEditWorkForm").addEventListener('submit', function
   formData.append("category", document.getElementById("formCategory").value);
   formData.append("image", document.getElementById("formImage").files[0]);
 
-  fetch("http://localhost:5678/api/works", { // Fetch POST pour envoyer sur la DOM //
+  fetch("http://localhost:5678/api/works", { // Fetch POST pour envoyer sur le DOM //
     method : 'POST',
     headers : { 'Authorization' : 'Bearer ' + localStorage.getItem('token')},
     body : formData
@@ -241,7 +240,7 @@ document.getElementById("modalEditWorkForm").addEventListener('submit', function
     }
   })
   .then(function(json) { // On recrée l'élément HTML qui contient toutes les balises requises //
-    console.log(json);
+   // console.log(json);
     let pageFigure = document.createElement('figure'); // <figure> //
     pageFigure.setAttribute('id', json.id);
     pageFigure.setAttribute('class', json.categoryId);
@@ -273,10 +272,8 @@ document.getElementById("modalEditWorkForm").addEventListener('submit', function
     trashIcon.addEventListener('click', function(e) {  // Suppression directe d'un nouvel ajout //
     e.preventDefault();
     e.stopPropagation();
-    console.log(e, "bouton cliqué")
     if(confirm("Voulez-vous vraiment supprimer ce projet ?")) {
       const headers = {'Authorization':"Bearer "+ localStorage.getItem('token')}; // Bien mettre l'espace après Bearer //
-      console.log(headers);
       fetch('http://localhost:5678/api/works/'+json.id , {
         method : 'DELETE',
         headers : headers 
