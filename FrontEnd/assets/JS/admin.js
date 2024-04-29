@@ -90,7 +90,7 @@ if(localStorage.getItem("token") !== null && localStorage.getItem("userId") !== 
         document.getElementById('modalWorks').style.display = "none";
         document.getElementById('modalEdit').style.display = "none";
 
-        resetModal();
+        resetModal(); 
     })
 
     function resetModal() {

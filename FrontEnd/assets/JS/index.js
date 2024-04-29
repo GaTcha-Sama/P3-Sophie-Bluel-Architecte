@@ -341,7 +341,7 @@ document.getElementById("formImage").addEventListener('change', () => {
   }  
 });
 
-// Bouton "Valider" gris-vert //
+// Bouton "Valider" gris-vert  //
 
 document.getElementById('formImage').addEventListener('input', verifyProject);
 document.getElementById('formTitle').addEventListener('input', verifyProject);

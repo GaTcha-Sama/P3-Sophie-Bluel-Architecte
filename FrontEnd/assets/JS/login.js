@@ -50,7 +50,6 @@ document.getElementById("errorMessage").style.display = "none";
             .then(data =>   {
                 localStorage.setItem("token", data.token);
                 localStorage.setItem("userId", data.userId);
-
                 // Redirection vers page accueil //
                 location.href="index.html"
             });
